@@ -1,0 +1,240 @@
+
+
+class StockMarket:
+
+    def __init__(self):
+        self.Com1 = 1
+        self.Com2 = 1
+        self.Com3 = 1
+        self.Com4 = 1
+        self.Com5 = 1
+
+        self.com1 = 1
+        self.com2 = 1
+        self.com3 = 1
+        self.com4 = 1
+        self.com5 = 1
+
+        self.com1_cache = 0
+        self.com2_cache = 0
+        self.com3_cache = 0
+        self.com4_cache = 0
+        self.com5_cache = 0
+
+
+
+    def dis_current_stock(self):
+        print("All Stocks")
+        print("company 1 : "self.com1)
+        print("company 2 : "self.com2)
+        print("company 3 : "self.com3)
+        print("company 4 : "self.com4)
+        print("company 5 : "self.com5)
+
+    def inc_points(self):
+        while True:
+            broker.dis_current_stock()
+            res = int(input("Select The company in which you want to invest [enter 6 to quit] : "))
+            if res == 1:
+                inr_amt = int(input(f"Enter the amount by which you want to increase the points for:"{self.Com1}))
+                self.Com1 += inr_amt
+                self.com1_cache += inr_amt % 5
+                global_incr = inr_amt // 5
+                if self.com1_cache >= 5:
+                    self.com1 += self.com1_cache // 5
+                    self.com1_cache %= 5
+
+                self.com1 += global_incr
+                print(f"Amount increased by {inr_amt}.")
+                cont_res = str(input("Do you want to continue? [y/n] : "))
+                if cont_res == 'y':
+                    continue
+                elif cont_res == 'n':
+                    break
+
+
+            elif res == 2:
+                inr_amt = int(input(f"Enter the amount by which you want to increase the points for:"{self.Com2}))
+                self.Com2 += inr_amt
+                self.com2_cache += inr_amt % 5
+                global_incr = inr_amt // 5
+                if self.com2_cache >= 5:
+                    self.com2 += self.com2_cache // 5
+                    self.com2_cache %= 5
+
+                self.com2 += global_incr
+                print(f"Amount increased by {inr_amt}.")
+                cont_res = str(input("Do you want to continue? [yes/no] : "))
+                if cont_res == 'yes':
+                    continue
+                elif cont_res == 'no':
+                    break
+
+            elif res == 3:
+                inr_amt = int(input(f"Enter the amount by which you want to increase the points for:" {self.Company3} : ))
+                self.Com3 += inr_amt
+                self.com3_cache += inr_amt % 5
+                global_incr = inr_amt // 5
+                if self.com3_cache >= 5:
+                    self.com3 += self.com3_cache // 5
+                    self.com3_cache %= 5
+
+                self.com3 += global_incr
+                print(f"Amount increased by {inr_amt}.")
+                cont_res = str(input("Do you want to continue? [yes/no] : "))
+                if cont_res == 'yes':
+                    continue
+                elif cont_res == 'no':
+                    break
+
+            elif res == 4:
+                inr_amt = int(input(f"Enter the amount by which you want to increase the points for:" {self.Com4}))
+                self.Com4 += inr_amt
+                self.com4_cache += inr_amt % 5
+                global_incr = inr_amt // 5
+                if self.com4_cache >= 5:
+                    self.com4 += self.com4_cache // 5
+                    self.com4_cache %= 5
+
+                self.com4 += global_incr
+                print(f"Amount increased by {inr_amt}.")
+                cont_res = str(input("Do you want to continue? [yes/no] : "))
+                if cont_res == 'yes':
+                    continue
+                elif cont_res == 'no':
+                    break
+
+            elif res == 5:
+                inr_amt = int(input(f"Enter the amount by which you want to increase the points for:" {self.Com5}))
+                self.Com5 += inr_amt
+                self.com5_cache += inr_amt % 5
+                global_incr = inr_amt // 5
+                if self.com5_cache >= 5:
+                    self.com5 += self.com5_cache // 5
+                    self.com5_cache %= 5
+
+                self.com5 += global_incr
+                print(f"Amount increased by {inr_amt}.")
+                cont_res = str(input("Do you want to continue? [yes/no] : "))
+                if cont_res == 'yes':
+                    continue
+                elif cont_res == 'no':
+                    break
+
+            elif res == 6:
+                break
+
+
+            else:
+                print("Enter proper option. eg : 1,2,3..")
+
+    def dec_points(self):
+        while True:
+            broker.dis_current_stock()
+            res = int(input("Select The company in which you want to invest [enter 6 to quit] : "))
+            if res == 1:
+                inr_amt = int(input(f"Enter the amount by which you want to decrease the points for:" {self.Com1}))
+                self.Com1 -= inr_amt
+                self.com1_cache -=  -(inr_amt % 5)
+                global_incr = inr_amt // 5
+                if abs(self.com1_cache) >= 5:
+                    self.com1 -= self.com1_cache // 5
+                    self.com1_cache %= 5
+
+                self.com1 -= global_incr
+                print(f"Amount decreased by {inr_amt}.")
+                cont_res = str(input("Do you want to continue? [y/n] : "))
+                if cont_res == 'y':
+                    continue
+                elif cont_res == 'n':
+                    break
+
+
+            elif res == 2:
+                inr_amt = int(input(f"Enter the amount by which you want to decrease the points for:" {self.Com2}))
+                self.Com2 -= inr_amt
+                self.com2_cache -= -(inr_amt % 5)
+                global_incr = inr_amt // 5
+                if self.com2_cache >= 5:
+                    self.com2 -= self.com2_cache // 5
+                    self.com2_cache %= 5
+
+                self.com2 -= global_incr
+                print(f"Amount decreased by {inr_amt}.")
+                cont_res = str(input("Do you want to continue? [yes/no] : "))
+                if cont_res == 'yes':
+                    continue
+                elif cont_res == 'no':
+                    break
+
+            elif res == 3:
+                inr_amt = int(input(f"Enter the amount by which you want to decrease the points for:" {self.Company3}))
+                self.Com3 -= inr_amt
+                self.com3_cache -= -(inr_amt % 5)
+                global_incr = inr_amt // 5
+                if self.com3_cache >= 5:
+                    self.com3 -= self.com3_cache // 5
+                    self.com3_cache %= 5
+
+                self.com3 -= global_incr
+                print(f"Amount decreased by {inr_amt}.")
+                cont_res = str(input("Do you want to continue? [yes/no] : "))
+                if cont_res == 'yes':
+                    continue
+                elif cont_res == 'no':
+                    break
+
+            elif res == 4:
+                inr_amt = int(input(f"Enter the amount by which you want to decrease the points for:" {self.Com4}))
+                self.Com4 -= inr_amt
+                self.com4_cache -= -(inr_amt % 5)
+                global_incr = inr_amt // 5
+                if self.com4_cache >= 5:
+                    self.com4 -= self.com4_cache // 5
+                    self.com4_cache %= 5
+
+                self.com4 -= global_incr
+                print(f"Amount decreased by {inr_amt}.")
+                cont_res = str(input("Do you want to continue? [yes/no] : "))
+                if cont_res == 'yes':
+                    continue
+                elif cont_res == 'no':
+                    break
+
+            elif res == 5:
+                inr_amt = int(input(f"Enter the amount by which you want to decrease the points for:" {self.Com5}))
+                self.Com5 -= inr_amt
+                self.com5_cache -= -(inr_amt % 5)
+                global_incr = inr_amt // 5
+                if self.com5_ache >= 5:
+                    self.com5 -= self.com5_cache // 5
+                    self.com5_cache %= 5
+
+                self.com5 -= global_incr
+                print(f"Amount decreased by {inr_amt}.")
+                cont_res = str(input("Do you want to continue? [y/n] : "))
+                if cont_res == 'y':
+                    continue
+                elif cont_res == 'n':
+                    break
+
+            elif res == 6:
+                break
+
+
+            else:
+                print("Enter proper option. eg : 1,2,3..")
+
+if __name__ == "__main__":
+
+    broker = StockMarket()
+    while True:
+        res = int(input("Would you like to increase the points or decrease the points : "))
+        if res == 1:
+            broker.inc_points()
+        elif res == 2:
+            broker.dec_points()
+        elif res == 3:
+            break
+        else:
+            print("Enter correct options.")
